@@ -1,5 +1,5 @@
 aplicacao1:
-  url: https://serverest.dev/
+  url: https://jsonplaceholder.typicode.com/
   username: admin
   password: 77777
   headers: {"Content-Type": "application/json"}
