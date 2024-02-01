@@ -1,4 +1,4 @@
-def post_usuarios_schema
+def post_verbos_basicos_schema
     payload = {
       "type": "object",
       "properties": {
@@ -17,7 +17,7 @@ def post_usuarios_schema
     payload.to_json
 end
 
-def put_usuarios_schema
+def put_verbos_basicos_schema
   payload = {
     "type": "object",
     "properties": {

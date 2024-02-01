@@ -1,4 +1,4 @@
-class UsuariosRequest
+class VerbosBasicosRequest
     include HTTParty
     base_uri CONFIG["aplicacao1"]["url"]
 
@@ -12,19 +12,24 @@ class UsuariosRequest
 
     end
 
-    def post_usuarios(body)
-        url_path = "/usuarios"
+    def post_verbos_basicos(body)
+        url_path = "/posts"
         self.class.post(url_path, @options.merge!({:body => body}))
     end
 
-    def put_usuarios(body, usuario_id)
-        url_path = "/usuarios/#{usuario_id}"
+    def put_verbos_basicos(body, id)
+        url_path = "/posts/#{id}"
         self.class.put(url_path, @options.merge!({:body => body}))
     end
 
-    def get_usuarios_by_id(usuario_id)
-        url_path = "/usuarios/#{usuario_id}"
+    def get_verbos_basicos_by_id(id)
+        url_path = "/posts/#{id}"
         self.class.get(url_path)
+    end
+
+    def delete_verbos_basicos_by_id(id)
+        url_path = "/posts/#{id}"
+        self.class.post(url_path, @options.merge!({:body => body}))
     end
 
 end

@@ -1,6 +1,6 @@
 Dir[File.join(File.dirname(__FILE__), "/features/services/models/*_body.rb")].each{|file| require file}
 
-class UsuariosPayload
+class VerbosBasicosPayload
     attr_accessor :body, :tabela_gherkin
 
     def initialize
@@ -12,22 +12,22 @@ class UsuariosPayload
 
         # POST
 
-            def create_post_usuarios_body()
+            def create_post_verbos_basicos_body()
                 if self.body == nil
-                    self.body = JSON.parse(post_usuarios_body)
+                    self.body = JSON.parse(post_verbos_basicos_body)
                 end
             end
 
-            def create_post_usuarios_body_default()
-                self.body = JSON.parse(post_usuarios_body)
+            def create_post_verbos_basicos_body_default()
+                self.body = JSON.parse(post_verbos_basicos_body)
             end
 
         # END
 
         # PUT
 
-            def create_put_usuarios_body()
-                self.body = JSON.parse(post_usuarios_body)
+            def create_put_verbos_basicos_body()
+                self.body = JSON.parse(post_verbos_basicos_body)
             end
         
         # END
@@ -35,7 +35,7 @@ class UsuariosPayload
     # END
 
 
-    def edit_post_usuarios_body_by_table(table)
+    def edit_post_verbos_basicos_body_by_table(table)
         self.tabela_gherkin = table
 
         self.tabela_gherkin.each do |chave, valor|
@@ -44,33 +44,27 @@ class UsuariosPayload
 
             # UPDATE KEY
 
-                when "nome"
-                    update_nome(valor)
+                when "title"
+                    update_title(valor)
 
-                when "email"
-                    update_email(valor)
+                when "body"
+                    update_body(valor)
 
-                when "password"
-                    update_password(valor)
-
-                when "administrador"
-                    update_administrador(valor)
+                when "userId"
+                    update_userId(valor)
                 
             # END
 
             # CLEAR KEY
 
-                when "delete_nome"
-                    delete_nome(valor)
+                when "delete_title"
+                    delete_title(valor)
 
-                when "delete_email"
-                    delete_email(valor)
+                when "delete_body"
+                    delete_body(valor)
 
-                when "delete_password"
-                    delete_password(valor)
-
-                when "delete_administrador"
-                    delete_administrador(valor)
+                when "delete_userId"
+                    delete_userId(valor)
 
             # END
 
@@ -90,35 +84,27 @@ class UsuariosPayload
 
     # CLEAR KEY
 
-        def delete_nome(condicao)
+        def delete_title(condicao)
             if condicao == "sem informações"
-                self.body["nome"] = nil
+                self.body["title"] = nil
             elsif condicao == "sem o objeto"
-                self.body.delete("nome")
+                self.body.delete("title")
             end
         end
 
-        def delete_email(condicao)
+        def delete_body(condicao)
             if condicao == "sem informações"
-                self.body["email"] = nil
+                self.body["body"] = nil
             elsif condicao == "sem o objeto"
-                self.body.delete("email")
+                self.body.delete("body")
             end
         end
 
-        def delete_password(condicao)
+        def delete_userId(condicao)
             if condicao == "sem informações"
-                self.body["password"] = nil
+                self.body["userId"] = nil
             elsif condicao == "sem o objeto"
-                self.body.delete("password")
-            end
-        end
-
-        def delete_administrador(condicao)
-            if condicao == "sem informações"
-            self.body["administrador"] = nil
-            elsif condicao == "sem o objeto"
-            self.body.delete("administrador")
+                self.body.delete("userId")
             end
         end
 
@@ -126,20 +112,16 @@ class UsuariosPayload
 
     # UPDATE KEY
 
-        def update_nome(nome)
-            self.body["nome"] = nome
+        def update_title(title)
+            self.body["title"] = title
         end
 
-        def update_email(email)
-            self.body["email"] = email
+        def update_body(body)
+            self.body["body"] = body
         end
 
-        def update_password(password)
-            self.body["password"] = password
-        end
-
-        def update_administrador(administrador)
-            self.body["administrador"] = administrador
+        def update_userId(userId)
+            self.body["userId"] = userId
         end
 
     # END

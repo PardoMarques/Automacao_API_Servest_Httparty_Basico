@@ -1,6 +1,5 @@
 Before do 
-  @login_payload = LoginPayload.new
-  @usuarios_payload = UsuariosPayload.new
+  @verbos_basicos_payload = VerbosBasicosPayload.new
 end
 
 Before('@skip') do

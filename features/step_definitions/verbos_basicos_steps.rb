@@ -59,7 +59,7 @@ Dado('API1_verbos_basicos_GET - pesquiso o usuario pelo Id') do
 end
 
 
-E('API1_Usuarios - Validar se os dados correspondem a consulta - conforme a tabela') do |table|
+E('API1_verbos_basicos - Validar se os dados correspondem a consulta - conforme a tabela') do |table|
   table = formatarRegexDaTabela(table.hashes[0])
 
   table.each do |chave, valor|
@@ -88,7 +88,7 @@ E('API1_Usuarios - Validar se os dados correspondem a consulta - conforme a tabe
 end
 
 
-Dado('API1_Usuarios - Validar se os dados correspondem ao cadastro') do
+Dado('API1_verbos_basicos - Validar se os dados correspondem ao cadastro') do
   expect(@response_get_verbos_basicos_by_id["nome"]).to eql(@cadastro_tabela["nome"])
   expect(@response_get_verbos_basicos_by_id["email"]).to eql(@cadastro_tabela["email"])
   expect(@response_get_verbos_basicos_by_id["password"]).to eql(@cadastro_tabela["password"])
@@ -120,7 +120,7 @@ Dado('API1_verbos_basicos_PUT - atualizo um novo usuario - conforme a tabela') d
 end
 
 
-Dado('API1_Usuarios - Validar se os dados correspondem a atualização') do
+Dado('API1_verbos_basicos - Validar se os dados correspondem a atualização') do
   expect(@response_get_verbos_basicos_by_id["nome"]).to eql(@atualizacao_tabela["nome"])
   expect(@response_get_verbos_basicos_by_id["email"]).to eql(@atualizacao_tabela["email"])
   expect(@response_get_verbos_basicos_by_id["password"]).to eql(@atualizacao_tabela["password"])
@@ -128,6 +128,6 @@ Dado('API1_Usuarios - Validar se os dados correspondem a atualização') do
 end
 
 
-Dado('API1_Usuarios - Validar se o status code é {int}') do |resultado|
+Dado('API1_verbos_basicos - Validar se o status code é {int}') do |resultado|
   expect(@response.code).to eql(resultado)
 end
