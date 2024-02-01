@@ -2,8 +2,8 @@ Dir[File.join(File.dirname(__FILE__), "/services/requests/*_requests.rb")].each{
 
 module HelperRequests
 
-  def verbos_basicos_request
-    @verbos_basicos_request ||= VerbosBasicosRequest::new
+  def users_request
+    @users_request ||= UsersRequest::new
   end
 
 end
