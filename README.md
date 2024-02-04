@@ -19,7 +19,6 @@ Para executar o projeto localmente, é preciso realizar a instalação do Ruby 3
 ## Clonar este repositório
 ## Acessar a pasta via terminal/cmd
 ## Realizar as instalações das gems
-## Baixar a versão adequada do chromedriver para que seja compativel ao Google Chrome instalado em sua máquina
 
     cmd:
     $ gem install bundler
