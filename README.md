@@ -1,4 +1,4 @@
-# Testes de API - JSONPlaceholder
+# Automacao_API_Servest_Httparty - Modelo Básico
 
 As gems utilizadas neste projeto são as
 
